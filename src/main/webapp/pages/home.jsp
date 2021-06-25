@@ -105,7 +105,7 @@
 							<div class="pull-right styl-price">
 								<p>
 								<form action="" method="POST" accept-charset="utf-8">
-									<button value="${product.masp }" type='submit' name="cart"
+									<button value="${product.masp }" type='button' name="cart"
 										class="item_add btn btn-light" style="float: right;">
 										<span class="glyphicon glyphicon-shopping-cart grid-cart"
 											aria-hidden="true"></span> $<span class="item_price">
@@ -120,7 +120,7 @@
 					</div>
 				</div>
 				<div class="quick-view">
-					<a href="Home/Product_id/${product.masp }">Quick view</a>
+					<a href="product-detail/${product.masp }">Quick view</a>
 				</div>
 			</div>
 		</c:forEach>

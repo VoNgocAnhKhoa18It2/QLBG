@@ -10,6 +10,13 @@
 					$('.alert').show();
 				}
 			})
+			var check = $('.alert').is(":visible");
+			if (check){
+				$("input[name='signup']").prop('disabled',true);
+				$(this).css({"box-shadow":"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(251, 67, 94)"});
+				$('.alert').text($('.alert').text());
+				$('.alert').show();
+			}
 		});
 		$('form input').blur(function()
 		{
@@ -31,25 +38,27 @@
 		
 		$("input[name='email']").blur(function(){
 			var email = $(this).val();
-			if(validateEmail(email) == false)
-			{
+			if(validateEmail(email) == false){
 				$("input[name='signup']").prop('disabled',false);
 				$(this).css({"box-shadow":"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(251, 67, 94)"});
 				$('.alert').text("Email don't exist");
 				$('.alert').show();
+				return;
 			}
-			$.post("./mvc/core/xuly_ajax.php",
+			
+			$.post("./check-email",
 			{
-				email_signup : email,
+				email : email,
 			},
 			function(data,status){
 				if (status == 'success') {
-					if (data == 1) 
-					{
+					if (data == "true"){
 						$("input[name='signup']").prop('disabled',false);
 						$("input[name='email']").css({"box-shadow":"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(251, 67, 94)"});
 						$('.alert').text("Email already exists");
 						$('.alert').show();
+					} else {
+						$('.alert').hide();
 					}
 				}
 			});
@@ -94,16 +103,16 @@
 					<li><input type="date" name="birth"></li>
 				</ul>				 
 				<ul>
-					<li class="text-info">Gender (Male or Female): </li>
-					<li><input type="text" name="gender" ></li>
+					<li class="text-info">Gender: </li>
+					<li><input type="text" name="gender" placeholder="(Male or Female)"></li>
 				</ul>
 				<ul>
 					<li class="text-info">Email: </li>
-					<li><input type="text" name="email" placeholder="Email"></li>
+					<li><input type="text" name="email"></li>
 				</ul>
 				<ul>
 					<li class="text-info">Re-enter Password:</li>
-					<li><input type="password" name="pass" placeholder="Password"></li>
+					<li><input type="password" name="pass"></li>
 				</ul>						
 				<input type="submit" name="signup" value="Register Now">
 				<p class="click">By clicking this button, you are agree to my  <a href="#">Policy Terms and Conditions.</a></p> 

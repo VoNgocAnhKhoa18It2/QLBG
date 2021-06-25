@@ -22,6 +22,24 @@
   	<description></description>
   	<servlet-class>com.qlgiay.controller.Logout</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AjaxController</servlet-name>
+  	<display-name>AjaxController</display-name>
+  	<description></description>
+  	<servlet-class>com.qlgiay.controller.AjaxController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProductController</servlet-name>
+  	<display-name>ProductController</display-name>
+  	<description></description>
+  	<servlet-class>com.qlgiay.controller.ProductController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProductDetail</servlet-name>
+  	<display-name>ProductDetail</display-name>
+  	<description></description>
+  	<servlet-class>com.qlgiay.controller.ProductDetail</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginController</servlet-name>
   	<url-pattern>/LoginController</url-pattern>
@@ -33,6 +51,18 @@
   <servlet-mapping>
   	<servlet-name>LogoutController</servlet-name>
   	<url-pattern>/LogoutController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AjaxController</servlet-name>
+  	<url-pattern>/AjaxController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProductController</servlet-name>
+  	<url-pattern>/ProductController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProductDetail</servlet-name>
+  	<url-pattern>/ProductDetail</url-pattern>
   </servlet-mapping>
   
 </web-app>

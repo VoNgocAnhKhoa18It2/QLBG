@@ -3,7 +3,6 @@ package com.qlgiay.controller;
 import java.io.IOException;
 import java.util.List;
 
-import javax.jws.WebService;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +23,7 @@ public class HomeController extends HttpServlet {
 		try {
 			ProductDAO productDAO = new ProductDAOImpl(DBConnect.getConn());
 			
-			List<Product> list = productDAO.getProductRamdom(3);
+			List<Product> list = productDAO.getProductRamdom(6);
 			
 			request.setAttribute("pages", "home");
 			request.setAttribute("list", list);
