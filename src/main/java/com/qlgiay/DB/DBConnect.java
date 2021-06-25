@@ -15,7 +15,9 @@ public class DBConnect {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			try {
 				conn = DriverManager.getConnection("jdbc"
-						+ ":mysql://localhost:3306/qlbg?serverTimezone=UTC","root","");
+						+ ":mysql://bnqcxj75cvgskosdzwbe-mysql.services.clever-cloud.com:3306"
+						+ "/bnqcxj75cvgskosdzwbe?serverTimezone=UTC","usfibaihd1cxi4vf","aUdJG480lb2lNiD6hMFG");
+				System.out.println("Thanh Cong");
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
